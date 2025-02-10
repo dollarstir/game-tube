@@ -11,6 +11,7 @@ import {
 import "./App.css";
 import { RiArrowRightLine, RiMailLine } from "react-icons/ri";
 import NavBar from "./components/NavBar";
+import GameGrid from "./components/GameGrid";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -30,7 +31,7 @@ function App() {
       </GridItem>
 
       <GridItem area="main  " bg="blue">
-        nav
+        <GameGrid/>
       </GridItem>
     </Grid>
   );

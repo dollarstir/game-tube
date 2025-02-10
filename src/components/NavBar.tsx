@@ -16,9 +16,9 @@ import { LuMoon, LuSun } from "react-icons/lu";
 function NavBar() {
   const { toggleColorMode, colorMode } = useColorMode();
   return (
-    <HStack>
+    <HStack justifyContent="space-betweenclear">
       <Image src={logo} boxSize="60px" />
-      <Text>Dollarsoft</Text>
+      
       <ClientOnly fallback={<Skeleton boxSize="8" />}>
         <IconButton
           onClick={toggleColorMode}
@@ -26,7 +26,7 @@ function NavBar() {
           size="sm"
         >
            {colorMode ==="light" ?<LuSun/> : <LuMoon/>}
-        </IconButton>
+        </IconButton> 
       </ClientOnly>
     </HStack>
   );
