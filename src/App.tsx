@@ -14,13 +14,13 @@ import NavBar from "./components/NavBar";
 import GameGrid from "./components/GameGrid";
 
 function App() {
-  const [count, setCount] = useState(0);
-
+ 
   return (
     <Grid
       templateAreas={{
         base: `"nav nav" "aside main"`,
       }}
+      spaceY={2}
     >
       <GridItem area="nav">
        <NavBar/>
@@ -30,7 +30,7 @@ function App() {
         Aside
       </GridItem>
 
-      <GridItem area="main  " bg="blue">
+      <GridItem area="main" >
         <GameGrid/>
       </GridItem>
     </Grid>

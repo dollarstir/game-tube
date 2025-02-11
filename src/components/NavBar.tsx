@@ -16,7 +16,7 @@ import { LuMoon, LuSun } from "react-icons/lu";
 function NavBar() {
   const { toggleColorMode, colorMode } = useColorMode();
   return (
-    <HStack justifyContent="space-betweenclear">
+    <HStack justifyContent="space-between">
       <Image src={logo} boxSize="60px" />
       
       <ClientOnly fallback={<Skeleton boxSize="8" />}>
