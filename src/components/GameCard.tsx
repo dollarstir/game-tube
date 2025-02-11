@@ -18,7 +18,7 @@ game : Game
 function GameCard({game}:Props) {
   return (
        
-            <Card.Root borderRadius={10} overflow={'hidden'}>
+            <Card.Root  borderRadius={10} overflow={'hidden'}>
                 <Image src={game.thumbnail} />
                 <Card.Body>
                     <Heading fontSize={'2xl'}>{game.title}</Heading>

@@ -12,6 +12,7 @@ import "./App.css";
 import { RiArrowRightLine, RiMailLine } from "react-icons/ri";
 import NavBar from "./components/NavBar";
 import GameGrid from "./components/GameGrid";
+import GenreList from "./components/GenreList";
 
 function App() {
  
@@ -26,8 +27,8 @@ function App() {
        <NavBar/>
       </GridItem>
 
-      <GridItem area="aside" bg="red">
-        Aside
+      <GridItem area="aside" >
+        <GenreList />
       </GridItem>
 
       <GridItem area="main" >

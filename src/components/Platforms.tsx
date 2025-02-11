@@ -11,7 +11,6 @@ function Platforms({platform}:Props) {
         "Web Browser":<BsBrowserChrome />};
     const icon  = platformIcons[platform as keyof typeof platformIcons];
 
-
     return (
         <Icon color='gray.500'>
             {icon || <span>Unknown platform</span>}
