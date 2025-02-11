@@ -1,6 +1,14 @@
 import React from 'react'
 import { Game } from '../models/Game'
-import { Card, Heading, Image } from '@chakra-ui/react'
+import { Box, Card, Heading, Icon, Image } from '@chakra-ui/react'
+import Platforms from './Platforms'
+
+
+
+
+
+
+
 
 
 interface Props{
@@ -13,6 +21,11 @@ function GameCard({game}:Props) {
                 <Image src={game.thumbnail} />
                 <Card.Body>
                     <Heading fontSize={'2xl'}>{game.title}</Heading>
+                    <Box padding={'10px'}><Platforms  platform={game.platform} /></Box>
+                    
+
+
+
                 </Card.Body>
             </Card.Root>
     

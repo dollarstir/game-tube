@@ -13,6 +13,7 @@ import logo from "../assets/webpack.svg";
 import { useColorMode } from "./ui/color-mode";
 import { LuMoon, LuSun } from "react-icons/lu";
 
+
 function NavBar() {
   const { toggleColorMode, colorMode } = useColorMode();
   return (
