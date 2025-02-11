@@ -4,7 +4,7 @@ import { getGames } from "../services/GamesService";
 import { CanceledError } from "axios";
 
 function useGnre() {
-    const [genre, setGenre] = useState<String[]>([]);
+    const [genre, setGenre] = useState<string[]>([]);
     const [error, setError] = useState("");
     const [isLoading,setIsLoading] = useState(false);
 
