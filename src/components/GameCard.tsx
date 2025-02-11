@@ -1,7 +1,8 @@
 import React from 'react'
 import { Game } from '../models/Game'
-import { Box, Card, Heading, Icon, Image } from '@chakra-ui/react'
+import { Box, Card, Heading, HStack, Icon, Image } from '@chakra-ui/react'
 import Platforms from './Platforms'
+import Score from './Score'
 
 
 
@@ -21,7 +22,10 @@ function GameCard({game}:Props) {
                 <Image src={game.thumbnail} />
                 <Card.Body>
                     <Heading fontSize={'2xl'}>{game.title}</Heading>
+                    <HStack justifyContent={'space-between'}>
                     <Box padding={'10px'}><Platforms  platform={game.platform} /></Box>
+                    <Score/>
+                    </HStack>
                     
 
 
