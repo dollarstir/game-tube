@@ -29,7 +29,6 @@ function GenreLogo({genre}:Props) {
     
       const logo = genreLogos[genre as keyof typeof genreLogos ];
       
-      console.log(logo);
   return (
     <Image src={logo|| defaultLogo} height='2px' boxSize={"32px;"} borderRadius={8}/>
   )

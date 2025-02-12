@@ -13,13 +13,23 @@ import { RiArrowRightLine, RiMailLine } from "react-icons/ri";
 import NavBar from "./components/NavBar";
 import GameGrid from "./components/GameGrid";
 import GenreList from "./components/GenreList";
+import { useWindowSize } from "@uidotdev/usehooks";
 
 function App() {
+  const [selectedGenre,setSelectedGenre] = useState('');
+  const window = useWindowSize();
+
+
+  const onSelectedGenre= (genre:string)=>{
+      setSelectedGenre(genre);
+      
+  }
  
   return (
     <Grid
       templateAreas={{
-        base: `"nav nav" "aside main"`,
+        base: `"nav" "main"`,
+        lg:`"nav nav" "aside main"`
       }}
       spaceY={2}
       templateColumns={{
@@ -32,12 +42,14 @@ function App() {
        <NavBar/>
       </GridItem>
 
-      <GridItem area="aside" paddingRight={'5px'} >
-        <GenreList />
+     <Show when={window.width! >875}>
+     <GridItem area="aside" paddingRight={'5px'} >
+        <GenreList onSelectedGenre={onSelectedGenre} />
       </GridItem>
+     </Show>
 
       <GridItem area="main" >
-        <GameGrid/>
+        <GameGrid selectedgenre={selectedGenre}/>
       </GridItem>
     </Grid>
   );

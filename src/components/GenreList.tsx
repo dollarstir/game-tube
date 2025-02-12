@@ -1,23 +1,31 @@
 import React from "react";
 import useGnre from "../hooks/useGenre";
 import logo from "../assets/logo.png";
-import { HStack, Image, Text } from "@chakra-ui/react";
+import { Button, HStack, Image, Spinner, Text } from "@chakra-ui/react";
 import GenreLogo from "./GenreLogo";
 
-export default function GenreList() {
+
+interface Props{
+    onSelectedGenre: (selectedGenre:string)=>void;
+}
+export default function GenreList({onSelectedGenre}:Props) {
   const { genre, setGenre, isLoading, error, setError } = useGnre();
+  
   
 
   return (
+    <>
+    {isLoading && <Spinner/>}
     <ul style={{ textDecoration: "none" }}>
       {genre.map((genre, index) => (
         <li key={index} style={{ paddingTop: "5px", paddingBottom: "5px" }}>
           <HStack>
             <GenreLogo genre={genre}  />
-            <Text fontSize={'lg'}>{genre}</Text>
+            <Button onClick={()=>onSelectedGenre(genre)} fontSize={'lg'} variant='ghost'>{genre}</Button>
           </HStack>
         </li>
       ))}
     </ul>
+    </> 
   );
 }
